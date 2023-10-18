@@ -6,7 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.database.ArticleDatabase
+import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.data.data_sources.local.ArticleDatabase
 import javax.inject.Singleton
 
 @Module
@@ -16,7 +16,7 @@ object ArticleDatabaseModule {
 
     @Singleton
     @Provides
-    fun provideArticleDatabase(@ApplicationContext context: Context) : ArticleDatabase {
+    fun provideArticleDatabase(@ApplicationContext context: Context): ArticleDatabase {
         return ArticleDatabase(context)
     }
 }

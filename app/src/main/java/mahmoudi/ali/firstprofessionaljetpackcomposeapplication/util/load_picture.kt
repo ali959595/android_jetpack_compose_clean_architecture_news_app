@@ -24,7 +24,7 @@ fun loadPicture(
     Glide.with(LocalContext.current)
         .asBitmap()
         .load(defaultImage)
-        .into(object : Target<Bitmap>{
+        .into(object : Target<Bitmap> {
             override fun onStart() {
             }
 
@@ -44,7 +44,7 @@ fun loadPicture(
             }
 
             override fun getSize(cb: SizeReadyCallback) {
-                cb.onSizeReady(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL);
+                cb.onSizeReady(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
             }
 
             override fun removeCallback(cb: SizeReadyCallback) {
@@ -66,7 +66,7 @@ fun loadPicture(
     Glide.with(LocalContext.current)
         .asBitmap()
         .load(url)
-        .into(object : Target<Bitmap>{
+        .into(object : Target<Bitmap> {
             override fun onStart() {
             }
 
@@ -86,7 +86,7 @@ fun loadPicture(
             }
 
             override fun getSize(cb: SizeReadyCallback) {
-                cb.onSizeReady(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL);
+                cb.onSizeReady(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
             }
 
             override fun removeCallback(cb: SizeReadyCallback) {

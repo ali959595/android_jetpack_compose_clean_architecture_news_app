@@ -4,10 +4,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.database.ArticleDatabase
-import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.network.NewsService
+import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.data.data_sources.local.ArticleDatabase
+import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.data.data_sources.remote.NewsService
+import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.data.model.util.ArticleDtoMapper
 import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.repository.NewsRepository
-import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.repository.NewsRepository_Impl
+import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.repository.NewsRepositoryImpl
 import javax.inject.Singleton
 
 @Module
@@ -16,8 +17,12 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideNewsRepository(newsService: NewsService, db: ArticleDatabase): NewsRepository {
-        return NewsRepository_Impl(newsService, db)
+    fun provideNewsRepository(
+        newsService: NewsService,
+        db: ArticleDatabase,
+        mapper: ArticleDtoMapper
+    ): NewsRepository {
+        return NewsRepositoryImpl(newsService, db, mapper)
     }
 
 }

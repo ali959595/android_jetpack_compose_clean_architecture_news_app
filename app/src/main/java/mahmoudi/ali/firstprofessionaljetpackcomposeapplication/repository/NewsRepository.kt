@@ -1,14 +1,12 @@
 package mahmoudi.ali.firstprofessionaljetpackcomposeapplication.repository
 
-import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.model.Article
-import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.model.NewsResponse
-import retrofit2.Response
+import mahmoudi.ali.firstprofessionaljetpackcomposeapplication.domain.model.Article
 
-interface NewsRepository  {
+interface NewsRepository {
 
-    suspend fun getBreakingNews() : Response<NewsResponse>
+    suspend fun getBreakingNews(): List<Article>
 
     suspend fun deleteArticle(article: Article)
     suspend fun saveArticle(article: Article)
-    fun getSavedArticles() : List<Article>
+    fun getSavedArticles(): List<Article>
 }
