@@ -8,4 +8,6 @@ These technologies are used in this project:
 # Retrofit
 # Room Database
 # Dagger Hilt
+# Navigation Compose
+# Glide Library
 # Animations
